@@ -1,0 +1,95 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <title>Restaurante Lá Rosa - Entregas</title>
+</head>
+<body>
+  <header>Restaurante Lá Rosa</header>
+    <div class="wrap">
+        <h2>Cardápio</h2>
+        <div id="menu" class="menu-grid" aria-live="polite"></div>
+        <h2>Fazer Pedido</h2>
+    <form id="orderForm" onsubmit="event.preventDefault(); placeOrder();">
+  <label>Nome Completo</label>
+  <input id="nome" required placeholder="Seu nome" />
+
+  <label>Telefone (WhatsApp)</label>
+  <input id="tel" required placeholder="Ex: +245950000000" />
+
+  <label>Endereço</label>
+  <textarea id="end" rows="2" required placeholder="Bairro, rua, referência"></textarea>
+
+  <label>Selecionar Prato</label>
+  <select id="prato" required></select>
+
+  <label>Quantidade</label>
+  <input id="qtd" type="number" min="1" value="1" required />
+
+  <div style="display:flex;gap:10px;margin-top:12px">
+    <button type="submit">Enviar Pedido (WhatsApp)</button>
+    <button type="button" class="btn-ghost" onclick="saveDraft()">Salvar rascunho</button>
+  </div>
+  <p class="small">Ao enviar será aberto o WhatsApp com a mensagem formatada. Se não tiver WhatsApp web no dispositivo, copie a mensagem e envie manualmente.</p>
+</form>
+
+<div class="admin-panel">
+  <div class="top-actions">
+    <strong>Painel do Dono</strong>
+    <div style="margin-left:auto" class="flex">
+      <button class="btn-ghost" onclick="showLogin()" id="loginBtn">Login / Gerir</button>
+      <button class="btn-ghost" onclick="exportData()">Exportar JSON</button>
+      <button class="btn-ghost" onclick="importPrompt()">Importar JSON</button>
+    </div>
+  </div>
+  <p class="small">Para gerir pratos, acede ao painel com a password do dono. O sistema guarda tudo localmente (no teu navegador). Para produção, indicarei como montar um backend simples.</p>
+
+  <div id="loginBox" style="display:none;margin-top:12px">
+    <input id="adminPass" placeholder="Password do dono" />
+    <div style="display:flex;gap:8px;margin-top:8px">
+      <button onclick="login()">Entrar</button>
+      <button class="btn-ghost" onclick="logout()">Sair</button>
+    </div>
+  </div>
+
+  <div id="adminArea" style="display:none;margin-top:14px">
+    <h3>Gerir Pratos</h3>
+    <div style="display:grid;grid-template-columns:1fr 320px;gap:12px;align-items:start">
+      <div>
+        <div id="manageList"></div>
+      </div>
+      <div>
+        <div style="background:#fff;padding:12px;border-radius:10px;box-shadow:0 6px 18px rgba(13,13,13,.05)">
+          <label>Nome do prato</label>
+          <input id="mName" />
+          <label>Descrição</label>
+          <input id="mDesc" />
+          <label>Preço (XOF)</label>
+          <input id="mPrice" type="number" />
+          <label>Imagem (opcional)</label>
+          <input id="mImg" type="file" accept="image/*" />
+          <div style="display:flex;gap:8px;margin-top:10px">
+            <button onclick="addOrUpdateDish()">Salvar prato</button>
+            <button class="btn-ghost" onclick="clearForm()">Limpar</button>
+          </div>
+          <p class="small" style="margin-top:8px">Podes adicionar imagens; elas ficam codificadas no navegador (localStorage).</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 style="margin-top:12px">Pedidos Recebidos (local)</h3>
+    <div id="ordersList"></div>
+  </div>
+</div>
+
+<footer>
+  <small>Versão local — pronto para transformar em site profissional. Precisas de domínio e alojamento para publicar.</small>
+</footer>
+
+  </div>
+  <script src="script.js">
+
+</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&display=swap');
+
+
+*{
+    
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    position:relative;
+    background-image:url('fundo.jpg') ;
+    color: #ffffff;
+    background-repeat: no-repeat;
+    background-size:cover ;
+    background-position:center center ;
+    font-family: "BBH Sans Hegarty", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+}
+
+.corpo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset legend{
+    text-align:center;
+}
+
+fieldset{
+    width: 40%;
+    height: 40%;
+    border-radius:15px;
+    background-color: #4981cf;
+    background: transparent;
+    backdrop-filter:blur(10px) ;
+    border:none;
+    
+}
+
+h1{
+    text-align:center;
+    color:#fff;
+    
+}
+
+form{
+    padding: 2rem;
+    display:flex;
+    flex-direction:column;
+    
+}
+
+
+input[type="text"], input[type="password"], input[type="email"]{
+    width:100%;
+    height:50px;
+    position:relative;
+    margin:15px 0;
+    padding:0 20px;
+    border:2px solid #2c4766;
+    border-radius:40px;
+    font-size:1em;
+    font-weight:600;
+    color:#fff;
+    outline:none;
+    background: transparent; 
+    transition:0.5s ease;
+    
+    
+    
+}
+
+
+
+input:focus, input:valid{
+    border-color:#0ef;
+}
+
+
+input[type="radio"] {
+    accent-color:#0ef;
+}
+
+input::placeholder{
+    color:CCD595;
+}
+
+select{
+    padding:0.5rem;
+    outline:none;
+    background-color: #CCD595;
+    border:none;
+    border-radius:5px;
+}
+
+button{
+    width:100%;
+    height:45px;
+    outline:none;
+    font-size:1em;
+    background-color:#0ef;
+    color:#fff;
+    border:none;
+    border-radius:40px;
+    font-weight:800;
+    
+    
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+input[type="checkbox"]{
+    accent-color:CCD595;
+    display:flex;
+    flex-direction:inline;
+}
+
+input::placeholder{
+    color:#fff;
+    font-weight:600;
+    
+}
+
+
+
+a{
+    
+    font-size:1em;
+    color:#0ef;
+    text-decoration:none;
+    outline:none;
+    font-weight:400;
+    text-align:center;
+    margin:20px 0 10px;
+}
+
+
